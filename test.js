@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-var subdivx = require('./subdivx');
-
+var subdivx = require('./subdivx')({ debug: false });
 // tests
 subdivx.downloadSubtitle(
     'the big bang theory s07e06',
