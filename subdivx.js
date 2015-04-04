@@ -65,7 +65,7 @@ function downloadSubtitle(show, releaseDetails, outputPath, callback) {
             tmpStream;
 
         if (!results.length) {
-            console.log('no subs found, try with less details');
+            console.log('No subs found for (' + show + '), try with less details');
             return;
         }
 
