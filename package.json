@@ -1,7 +1,7 @@
 {
   "name": "subdivx-downloader",
   "preferGlobal": true,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Pablo Costantini <luminicbox@gmail.com>",
   "description": "A subdivx subtitle downloader and extractor. Search for a show/movie and add any release information to better match the proper subtitle.",
   "keywords": [
@@ -10,7 +10,6 @@
   ],
   "dependencies": {
     "cheerio": "^0.19.0",
-    "jsdom": "^0.11.1",
     "q": "^1.2.0",
     "request": "*",
     "underscore": "*",

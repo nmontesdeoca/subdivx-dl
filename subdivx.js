@@ -5,7 +5,6 @@ var path = require('path'),
     cheerio = require('cheerio'),
     fs = require('fs'),
     unzip = require('unzip'),
-    jsdom = require('jsdom'),
     _ = require('underscore'),
     Q = require('Q'),
 
