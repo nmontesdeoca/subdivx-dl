@@ -57,7 +57,7 @@ function parseResponse(html) {
     return deferred.promise;
 }
 
-function downloadSubtitle(show, releaseDetails, outputPath) {
+function downloadSubtitle(show, releaseDetails, outputPath, callback) {
     searchShowRelease(show, releaseDetails, function (results) {
         var first,
             url,
@@ -83,6 +83,7 @@ function downloadSubtitle(show, releaseDetails, outputPath) {
             var type = this.response.headers['content-type'];
             decompressFor(type)(tmp, outputPath, function () {
                 fs.unlink(tmp); // delete
+                callback();
             });
         })
         .pipe(tmpStream);
