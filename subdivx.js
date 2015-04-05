@@ -82,6 +82,9 @@ function downloadSubtitle(show, releaseDetails, outputPath, callback) {
             var type = this.response.headers['content-type'];
             decompressFor(type)(tmp, outputPath, function () {
                 fs.unlink(tmp); // delete
+                if (~type.indexOf('rar')) {
+                    fs.unlink(tmp + '.rar');
+                }
                 callback();
             });
         })
@@ -134,6 +137,7 @@ function searchShow(show, callback) {
 }
 
 function decompress_rar(inputPath, outputPath, callback) {
+    fs.createReadStream(inputPath).pipe(fs.createWriteStream(inputPath + '.rar'));
     child_process.spawn(
         'unrar',
         [
